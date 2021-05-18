@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tr0q@nun-5frb1n_vbu#@tp%3dp11f+5@$ci(pf1oj&+)x8adz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vostbur.pythonanywhere.com']
 
 
 # Application definition
@@ -125,3 +125,8 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from dev_settings import *
+except ImportError:
+    print('Started with the production settings')
