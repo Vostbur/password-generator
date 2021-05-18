@@ -127,6 +127,6 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 try:
-    from dev_settings import *
+    from config.dev_settings import *
 except ImportError:
     print('Started with the production settings')
